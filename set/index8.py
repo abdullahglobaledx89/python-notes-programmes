@@ -1,0 +1,7 @@
+print("Intersection operation()")
+a=eval(input("Enter the set:"))
+b=eval(input("Enter the set:"))
+print("One way to perfrom intersection()")
+print(a.intersection(b))
+print("Another way to perfrom intersection()")
+print(a&b)

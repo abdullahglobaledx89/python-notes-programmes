@@ -1,0 +1,6 @@
+s=eval(input("Enter the set:"))
+print("Before performing clear function")
+print(s)
+print("After performing the clear() function")
+s.clear()
+print(s)

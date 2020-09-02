@@ -1,0 +1,8 @@
+print("To perform membership operator in & not in with SET")
+x3=input("Enter the set:")
+print("Set are:",x3)
+print("G" in x3)
+print('o' in x3)
+print(' 'in x3)
+print('D' not in x3)
+print('q' in x3)

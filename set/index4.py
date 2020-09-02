@@ -1,0 +1,6 @@
+s=eval(input("Enter the set:"))
+print("Before perfroming pop operation")
+print(s)
+print("After performing pop() operation")
+print(s.pop())
+print(s)
