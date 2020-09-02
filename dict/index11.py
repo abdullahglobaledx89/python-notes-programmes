@@ -1,0 +1,6 @@
+d=dict([(1001,"Micofrost"),(1002,"Oracle"),(1003,"Amazon")])
+print(d)
+print(type(d))
+print(d[1001])
+print(len(d))
+print(len(d[1001]))
