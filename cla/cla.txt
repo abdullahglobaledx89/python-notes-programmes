@@ -1,0 +1,11 @@
+what is cla(command line arguments)
+->The arguments which are passing at the time of python program execution is considered as cla
+-->We can implement cla in python bying argv variable which available in sys module
+--->argv variable is not array it is list type
+---->indexing and slice operator are applicable
+---->Usually space in seperator between command line arguments if our command line argument itself contains space then we must
+enclosed with double quotes and not with single quotation
+--->argv will display the output with file name
+--->As we know that argv is list type but the arguments items which are present inside list is string type
+if we are trying to perform addition of two numbers than it will perform string concatination to overcome this
+problem we need to perform typecasting based on the requirment
