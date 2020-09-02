@@ -1,0 +1,10 @@
+print("Byusing clear() Function")
+print()
+print("Before clearing list elements")
+n=[10,20,30,40,50]
+print(n)
+print(type(n))
+print("after clearing list elements")
+n.clear()
+print(n)
+print(type(n))
