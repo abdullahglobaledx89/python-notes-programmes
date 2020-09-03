@@ -1,0 +1,195 @@
+-->A group of functions,variable and classes saved to a file which is nothing 
+module
+-->Every Pyhton file(.py) is module
+mod1.py
+-------
+x=999
+def add(a,b):
+    print("The Sum",a+b)
+def product(a,b):
+    print("The Product",a*b)
+	
+
+mod2.py
+-------
+import mod1
+print(mod1.x)
+mod1.add(10,20)
+mod1.product(10,20)
+
+Note:
+-----
+Whenever we are using a module in our program for that module complied file
+will be generated and stored in the hard disk permanently
+    
+Renaming a Module at the time of import 
+---------------------------------------
+Module Aliasing:
+---------------
+Example:import mod1 as m
+-->Here mod1 is original module name and m is alias name
+-->We can access members by using alias name m
+
+from .... import
+-----------------
+We can import particular members of mudule by uisng from ...import
+The main advantage of this we can access members directly without using
+module name
+
+or 
+We can import all members of a module as from mod1 import *
+
+
+Various Possibilities of import
+-------------------------------
+1)import modulename
+2)import module1,module2,module3
+3)import module1 as m
+4)import module1 as m1,module2 as m2,module3 
+5)from module import member
+6)from module import member1,member2,member3
+7)from module import member1 as m1
+8)from module import * 
+
+Memember Aliasing
+------------------
+from mod1 import x as y ,add as sum
+print(y)
+sum(100.5,300.5)
+Once we defined as alias name,we should use alias name only and we should
+not use original name
+from mod1 import x as y
+print(x)#NameError:name 'x' is not defined 
+
+Reloading a Module
+------------------
+Bydefault module will be loaded only once eventhough we are importing
+multiple times
+for example
+-----------
+mod7.py
+print("This is from module7")
+
+mod8.py
+-------
+import mod7
+import mod7
+import mod7
+import mod7
+import mod7
+import mod7
+import mod7
+print("This is test module")
+
+-->In the above program mod8.py or module will be loaded only once eventhough
+we are importing multiple times
+-->The problem in this approach is after loading a modules if it is updated
+outsite then updated version of module1 not available to our program
+-->We can solve this problem by loading module explicitly based on our
+requirment bu using reload() function which is avaiable in  imp module
+
+import imp
+imp.reload(mod7)
+import mod7
+import mod7
+from imp import reload
+reload(mod7)
+reload(mod7)
+reload(mod7)
+print("This is Test1 module")
+
+The main Advanges of explicit module reloading is we can ensure that
+updated version is always available to our program
+
+
+Finding Memebers of Module by using dir() function:
+---------------------------------------------------
+Python provides inbuilt function dir() to list out all members of
+current module or a specified module
+
+dir()-> To list out all members of cuurent module
+dir(moduleName)->To list out members of specified module
+
+import mod1
+print(dir(mod1))
+
+Note:For every module at the time of excecution Python interpreter will
+add some spcecial properties automatically for internal use
+
+['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'add', 'product', 'x']
+
+#Based on our requirement we can access these properties also in our program
+print(__builtins__)
+print(__cached__)
+print(__doc__)
+print(__file__)
+print(__loader__)
+print(__name__)
+print(__package__)
+print(__spec__)
+
+
+The Special variable __name__:
+----------------------------
+1)For every Python program a spceial variable __name__ will added internally
+2)This variable stores information regarding wheather the program is executed as an
+individual program or as a module
+3)If the program excuted as an individual program  than the value of this
+variable is __main__
+4)
+5)If the program executed as a module from some other program then the 
+value of variables is the name of the module where it is defined
+6)Hence by using  this __name__ variable we can identify wheather
+the program executed directly or as a module
+
+
+Working with  math module
+-------------------------
+-->Python provide inbuilt module math
+-->This module defines several functions which can be used for mathematical
+operations
+-->The important functions are as follows
+   1)sqrt(x)
+   2)ceil(x)
+   3)floor(x)
+   4)fabs(x)
+   5)log(x)
+   6)sin(x)
+   7)tan(x)
+   
+Working with random Module
+--------------------------
+->This module defines serveral functions to generate random numbers
+->We can use these functions while developing games,in cryptography and to
+generate random numbers on fly for authentication
+
+1)random()function:
+------------------
+This function always generated some float values between 0 and 1 (not inclusive)
+  0<x<1
+2)randint() Function
+--------------------
+To generate random integar between two given numbers(inclusive)
+
+3)uniform() Funtion
+-------------------
+It returns random float values between 2 given numbers(not inclusive)
+
+4)randrange([start],stop,[step])
+--------------------------------
+-->Return a random number from range
+-->start <= x < stop
+-->start argument is optional and default value is 0
+-->step argument is optional and default value is 1
+
+-->randrange(10)->generates a number from 0 to 9
+-->randrange(1,11)->generates a number from 1 to 10
+-->randrange(1,11,2)->generates a number from 1,3,5,7,9
+
+
+5)choice() function:
+--------------------
+-->it wont return random number
+-->it will return a random object from the given list or tuple
+
+
